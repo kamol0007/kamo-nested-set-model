@@ -142,5 +142,7 @@ cython_debug/
 .idea
 .idea/
 
-# media file
+# media files
 media/
+# static files
+static/

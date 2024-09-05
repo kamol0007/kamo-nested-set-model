@@ -12,3 +12,6 @@ class NestedModel(models.Model):
         abstract = True,
         models.Index(fields=['nested_left', 'nested_right']),
         models.Index(fields=['nested_row']),
+
+    def __str__(self):
+        return str(self.nested_row)
