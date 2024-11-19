@@ -2,12 +2,15 @@ from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path
 
+
 class NestedCategoryAdmin(admin.ModelAdmin):
-    list_display = ( 'nested_left', 'nested_right', 'nested_row', 'nested_parent')
-    readonly_fields = ('nested_left', 'nested_right', 'nested_row' )
-    list_filter = ('nested_parent',)
+    list_display = ('nested_is_active', 'nested_parent', 'nested_left', 'nested_right', 'nested_row',
+                    'nested_child_count')
+    readonly_fields = ('nested_left', 'nested_right', 'nested_row', 'nested_child_count')
+    list_filter = ('nested_is_active', 'nested_parent')
     search_fields = ('name',)
     change_list_template = "admin/nested/change_list.html"
+    ordering = ('id',)
 
     def get_urls(self):
         urls = super().get_urls()
@@ -24,4 +27,3 @@ class NestedCategoryAdmin(admin.ModelAdmin):
             return redirect(referer_url)
         else:
             return redirect('/admin/')
-         

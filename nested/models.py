@@ -3,9 +3,11 @@ from django.db import models
 
 # Create your models here.
 class NestedModel(models.Model):
+    nested_is_active = models.BooleanField(default=True)
     nested_left = models.IntegerField(default=0)
     nested_right = models.IntegerField(default=0)
     nested_row = models.IntegerField(default=0)
+    nested_child_count = models.IntegerField(default=0)
     nested_parent = models.ForeignKey("self", null=True, blank=True, related_name="children", on_delete=models.CASCADE)
 
     class Meta:
