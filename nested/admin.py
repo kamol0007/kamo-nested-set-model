@@ -24,3 +24,4 @@ class NestedCategoryAdmin(admin.ModelAdmin):
             return redirect(referer_url)
         else:
             return redirect('/admin/')
+         
