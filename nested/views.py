@@ -16,15 +16,12 @@ def generate_nested(request):
 
 @staff_member_required
 def generate_nested2(request):
-    messages.success(request, "Nested categories generated successfully.")
-
-    # Admin interfeysi uchun zarur kontekstni olish
+    # messages.success(request, "Nested categories generated successfully.")
     admin_context = admin.site.each_context(request)
-
-    # Maxsus ma'lumotlarni qo'shish
     admin_context.update({
+        "title": "Nested Tree",
         'message': "Nested categories have been generated!",
         'additional_data': "Here you can add extra details about the process.",
     })
-
+    print("admin_context", admin_context)
     return render(request, 'admin/nested/generate_nested.html', admin_context)
