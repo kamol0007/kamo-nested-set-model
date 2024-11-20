@@ -4,7 +4,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import admin
 
 
-def generate_nested(request):
+def generate_nested___test(request):
     messages.success(request, "Nested categories generated successfully.")
     referer_url = request.META.get('HTTP_REFERER')
 
@@ -15,8 +15,7 @@ def generate_nested(request):
 
 
 @staff_member_required
-def generate_nested2(request):
-    # messages.success(request, "Nested categories generated successfully.")
+def generate_nested(request):
     admin_context = admin.site.each_context(request)
     admin_context.update({
         "title": "Nested Tree",
