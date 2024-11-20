@@ -15,7 +15,7 @@ def generate_nested___test(request):
 
 
 @staff_member_required
-def generate_nested(request):
+def generate_nested(request, app_name, model_name):
     admin_context = admin.site.each_context(request)
     admin_context.update({
         "title": "Nested Tree",

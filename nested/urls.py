@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/generate-nested/', views.generate_nested, name='generate_nested'),
+    path('admin/nested-set-model/<str:app_name>/<str:model_name>', views.generate_nested, name='set_nested_model'),
 ]
