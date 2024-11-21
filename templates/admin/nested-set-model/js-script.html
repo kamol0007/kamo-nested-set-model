@@ -6,10 +6,10 @@
     $(function () {
         $(".sortable").sortable({
             handle: ".drag-handle",
-            connectWith: ".sortable", // Barcha ichma-ish ro'yxatlarni ulash
-            placeholder: "ui-state-highlight", // Tartibni o'zgartirishda ko'rinadigan joy
-            forcePlaceholderSize: true // Bo'sh joyni doimiy ko'rsatish
-        }).disableSelection(); // Matn tanlashni o'chirish
+            connectWith: ".sortable",
+            placeholder: "ui-state-highlight",
+            forcePlaceholderSize: true
+        }).disableSelection();
     });
 </script>
 <style>
@@ -44,5 +44,9 @@
 
     .ui-state-highlight {
         background: var(--header-color);;
+    }
+    .ui-sortable-helper{
+        color: orange;
+        background: var(--darkened-bg);
     }
 </style>
