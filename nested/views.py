@@ -18,7 +18,7 @@ def generate_nested___test(request):
 def generate_nested(request, app_name, model_name):
     admin_context = admin.site.each_context(request)
     admin_context.update({
-        "title": "Nested Tree",
+        "title": "Nested Set Model - "+app_name.capitalize()+"."+model_name.capitalize(),
         'message': "Nested categories have been generated!",
         'additional_data': "Here you can add extra details about the process.",
     })
