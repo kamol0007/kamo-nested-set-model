@@ -15,22 +15,52 @@
             </div>
         </div>
     </div>
-    <div>
-        <ul id="sortable">
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+    <div style="padding: 0 8px">
+        <ul class="sortable nested-sortable">
+            <li><span class="drag-handle">⇅</span>
+                Item 1
+                <ul class="nested-sortable sortable">
+                    <li><span class="drag-handle">⇅</span>
+                        Sub-item 1.1
+                        <ul class="nested-sortable sortable"></ul>
+                    </li>
+                    <li><span class="drag-handle">⇅</span>
+                        Sub-item 1.2
+                        <ul class="nested-sortable sortable"></ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="drag-handle">⇅</span>
+                Item 2
+                <ul class="nested-sortable sortable">
+                    <li><span class="drag-handle">⇅</span>Sub-item 2.1
+                        <ul class="nested-sortable sortable"></ul>
+                    </li>
+                    <li><span class="drag-handle">⇅</span>
+                        Sub-item 2.2
+                        <ul class="nested-sortable sortable">
+                            <li><span class="drag-handle">⇅</span>Sub-sub-item 2.2.1
+                                <ul class="nested-sortable sortable"></ul>
+                            </li>
+                            <li><span class="drag-handle">⇅</span>Sub-sub-item 2.2.2
+                                <ul class="nested-sortable sortable"></ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="drag-handle">⇅</span>Item 3
+                <ul class="nested-sortable sortable"></ul>
+            </li>
         </ul>
     </div>
-    <div class="submit-row" style="background: var(--darkened-bg)">
+    <br/>
+    <div class="nsm-content">
         <button id="testbtn" class="button" onclick="testclick()">Test btn</button>
     </div>
 {% endblock %}
 {% block footer %}
+    {% include "admin/nested-set-model/style.html" %}
     {% include "admin/nested-set-model/jquery.html" %}
     {% include "admin/nested-set-model/jquery-ui.html" %}
     {% include "admin/nested-set-model/js-script.html" %}

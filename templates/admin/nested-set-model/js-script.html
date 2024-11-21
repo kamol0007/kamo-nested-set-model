@@ -1,9 +1,48 @@
 <script>
-    console.log("test jquery ui");
+    console.log("start js");
     const testclick = () => {
         document.getElementById('testbtn').innerHTML = "Succes";
     }
     $(function () {
-        $("#sortable").sortable();
+        $(".sortable").sortable({
+            handle: ".drag-handle",
+            connectWith: ".sortable", // Barcha ichma-ish ro'yxatlarni ulash
+            placeholder: "ui-state-highlight", // Tartibni o'zgartirishda ko'rinadigan joy
+            forcePlaceholderSize: true // Bo'sh joyni doimiy ko'rsatish
+        }).disableSelection(); // Matn tanlashni o'chirish
     });
 </script>
+<style>
+    .sortable {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    .sortable li {
+        margin: 2px 0;
+        padding: 2px;
+        border: 1px solid var(--hairline-color);
+        border-radius: 4px;
+        list-style-type: none;
+    }
+
+    .drag-handle {
+        cursor: move;
+        background: var(--button-bg);
+        padding: 0 4px;
+        border: none;
+        border-radius: 4px;
+        color: var(--button-fg);
+        margin-right: 5px;
+    }
+
+    .nested-sortable {
+        padding: 5px 0 5px 10px;
+    }
+
+    .ui-state-highlight {
+        background: var(--header-color);;
+    }
+</style>
