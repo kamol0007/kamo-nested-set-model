@@ -1,0 +1,37 @@
+{% extends "admin/base.html" %}
+{% block branding %}
+    <div id="site-name">
+        <a href="{% url 'admin:index' %}">
+            {{ site_header }}
+        </a>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>{{ message }}</h1>
+                <p>{{ additional_data }}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <ul id="sortable">
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+        </ul>
+    </div>
+    <div class="submit-row" style="background: var(--darkened-bg)">
+        <button id="testbtn" class="button" onclick="testclick()">Test btn</button>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% include "admin/nested-set-model/jquery.html" %}
+    {% include "admin/nested-set-model/jquery-ui.html" %}
+    {% include "admin/nested-set-model/js-script.html" %}
+{% endblock %}

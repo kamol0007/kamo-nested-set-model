@@ -17,4 +17,4 @@ class CategoryAdmin(NestedCategoryAdmin):
 @admin.register(ProductImage)
 class ProductImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
-    change_list_template = "admin/nested/change_list.html"
+    change_list_template = "admin/nested-set-model/change_list.html"
