@@ -20,7 +20,7 @@
         list-style-type: none;
     }
 
-    .drag-handle {
+    .drag-handle, .sorttable-accordion {
         cursor: move;
         background: var(--button-bg);
         padding: 0 4px;
@@ -28,6 +28,14 @@
         border-radius: 4px;
         color: var(--button-fg);
         margin-right: 5px;
+    }
+
+    .drag-handle {
+        cursor: move;
+    }
+
+    .sorttable-accordion {
+        cursor: pointer;
     }
 
     .nested-sortable {

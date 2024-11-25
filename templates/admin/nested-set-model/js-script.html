@@ -11,4 +11,16 @@
             forcePlaceholderSize: true
         }).disableSelection();
     });
+    $(document).ready(function () {
+        $('.sorttable-accordion').on('click', function () {
+            const $nestedUl = $(this).siblings('ul.nested-sortable');
+            if ($nestedUl.css('display') === 'none') {
+                $nestedUl.css('display', 'block');
+                $(this).css('background', '').text("⯆");
+            } else {
+                $nestedUl.css('display', 'none');
+                $(this).css('background', 'orange').text("⯅");
+            }
+        });
+    });
 </script>
