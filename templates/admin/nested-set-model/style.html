@@ -20,24 +20,6 @@
         list-style-type: none;
     }
 
-    .drag-handle, .sorttable-accordion {
-        cursor: move;
-        background: var(--button-bg);
-        padding: 0 4px;
-        border: none;
-        border-radius: 4px;
-        color: var(--button-fg);
-        margin-right: 5px;
-    }
-
-    .drag-handle {
-        cursor: move;
-    }
-
-    .sorttable-accordion {
-        cursor: pointer;
-    }
-
     .nested-sortable {
         padding: 5px 0 5px 10px;
     }
@@ -49,5 +31,27 @@
     .ui-sortable-helper {
         color: orange;
         background: var(--darkened-bg);
+    }
+
+    .drag-handle, .sorttable-accordion {
+        cursor: move;
+        background: var(--button-bg);
+        padding: 0 4px;
+        border: none;
+        border-radius: 4px;
+        color: var(--button-fg);
+        margin-right: 5px;
+    }
+
+    .drag-handle:hover, .sorttable-accordion:hover {
+        opacity: 0.9;
+    }
+
+    .drag-handle {
+        cursor: move;
+    }
+
+    .sorttable-accordion {
+        cursor: pointer;
     }
 </style>

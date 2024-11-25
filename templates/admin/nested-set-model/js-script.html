@@ -3,15 +3,16 @@
     const testclick = () => {
         document.getElementById('testbtn').innerHTML = "Succes";
     }
-    $(function () {
+    {#$(function () {#}
+    {#});#}
+    $(document).ready(function () {
+
         $(".sortable").sortable({
             handle: ".drag-handle",
             connectWith: ".sortable",
             placeholder: "ui-state-highlight",
             forcePlaceholderSize: true
         }).disableSelection();
-    });
-    $(document).ready(function () {
         $('.sorttable-accordion').on('click', function () {
             const $nestedUl = $(this).siblings('ul.nested-sortable');
             if ($nestedUl.css('display') === 'none') {
